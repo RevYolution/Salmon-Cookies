@@ -27,3 +27,16 @@ ul {
 li {
     margin: 2px;
 }
+th {
+    font-weight: bold;
+    border: 2px solid black;
+    padding: 5px;
+}
+tr {
+    border: 2px solid black;
+    padding: 5px;
+}
+td {
+    border: 2px solid black;
+    padding: 5px;
+}

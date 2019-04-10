@@ -53,6 +53,9 @@ function renderHeader() {
     tr.append(th);
     salesTable.append(tr);
 }
+function renderFooter() {
+    
+}
 
 renderHeader();
 
