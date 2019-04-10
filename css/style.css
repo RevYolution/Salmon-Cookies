@@ -9,6 +9,7 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    float: top 50px, right 100px, bottom 50px, left 100px;
 }
 body {
     background-color: hsla(240, 25%, 42%, 0.5);
