@@ -1,5 +1,6 @@
 'use strict';
 
+var salesTable = document.getElementById('sales')
 var locations = ['1st and Pike','SeaTac Airport','Seattle Center','Capitol Hill','Alki'];
 var oppHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 
@@ -23,11 +24,6 @@ function Store(name,minimumCustomers, maximumCustomers, CookiesPerCustomer) {
     };
     }
 }
-Store.prototype.render = function() {
-   for(var i = 0; i < oppHours.length; i++)
-    var tr = document.createElement('tr');
-    var  = document.createElement('td');
-}
 function renderHeader() {
     var tr = document.createElement(tr);
     for(var i = 0; i < oppHours.length; i++) {
@@ -36,11 +32,32 @@ function renderHeader() {
         tr.append(th);
     }
 }
-// var firstAndPikeStore = new Store('1st and Pike', 23, 65, 6.3);
+
+function makeTable() {
+    var tableBodyLocation = document.getElementById("body");
+    var tableTag = document.createElement("table");
+    var tableBody = document.createElement("tableBody");
+    tableHead.textContent = this.locations;
+    for(var i = 0; i < locations.length; i++) {
+        var trAdd = document.createElement("tr");
+        var tableHead = document.createElement("tr");
+        tableHead.textContent = location[i].name;
+        trAdd.append(tableHead);
+        tableBody.append(trAdd);
+    }
+    
+
+}
+ var firstAndPikeStore = new Store('1st and Pike', 23, 65, 6.3);
+firstAndPikeStore.cookiesSold();
 // var seatacStore = new Store('SeaTac Airport', 3, 24, 1.2);
+//setacStore.cookiesSold();
 // var seattleCenterStore = new Store('Seattle Center', 11, 38, 3.7);
+//seattleCenterStore.cookiesSold();
 // var capitolHillStore = new Store('Capitol Hill', 20, 38, 2.3);
+//capitolHillStore.cookiesSold();
 // var alkiStore = new Store('Alki', 2, 16, 4.6);
+//alkiStore.cookiesSold();
 
 // var firstAndPikeStore = {
 //     id: 'firstAndPikeLoc',
