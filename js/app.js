@@ -1,8 +1,11 @@
 'use strict';
 
 var salesTable = document.getElementById('cookie-table');
-var locations = ['1st and Pike','SeaTac Airport','Seattle Center','Capitol Hill','Alki'];
+var allStores=[];
+// locations = ['1st and Pike','SeaTac Airport','Seattle Center','Capitol Hill','Alki'];
 var oppHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+var storeTotal = 0;
+var totalPerHour = [];
 
 function Store(name, minimumCustomers, maximumCustomers, cookiesPerCustomer) {
     this.storeName = name;
@@ -11,15 +14,28 @@ function Store(name, minimumCustomers, maximumCustomers, cookiesPerCustomer) {
     this.cookiesPerCustomer = cookiesPerCustomer;
     this.totalDayCookies = 0;
     this.cookiesSoldPerHour = [];
+    allStores.push(this);
+    
     this.customerCount = function(){
         return Math.floor(Math.random() * (this.maximunCustomers - this.minimumCustomers + 1)) + this.minimumCustomers;
     };
+    
     this.cookiesSold = function(){
         for(var i = 0; i < oppHours.length; i++) {
             var cookieNumber = Math.ceil(this.customerCount() * cookiesPerCustomer);
             this.cookiesSoldPerHour.push(cookieNumber);
             this.totalDayCookies += cookieNumber;
         };
+    };
+    this.dailyTotals = function() {
+        for(var i = 0; i < cookiesSoldPerHour.length; i++) {
+            this.totalDayCookies += this.cookiesSoldPerHour[i];
+        }
+    };
+    this.dailyStats = function() {
+        this.cookiesSold();
+        this.dailyTotals();
+        this.render();
     };
     this.render = function() {
         var trElement = document.createElement('tr');
@@ -54,6 +70,34 @@ function renderHeader() {
     salesTable.append(tr);
 }
 
+function footerCalculator(){
+    for(var i = 0; i < oppHours.length; i++){
+      var hourlyTotal = 0;
+      for(var j = 0; j < allStores.length; j++){
+        hourlyTotal += allStores[j].cookiesSoldPerHour[i];
+      }
+      storeTotal += hourlyTotal;
+      totalPerHour[i] = hourlyTotal;
+    }
+}
+
+function renderFooter() {
+    var trFoot = document.createElement('tr');
+    var tdElement = document.createElement('td');
+    tdElement.textContent = 'Hourly totals';
+    trFoot.append(tdElement);
+    for(var i = 0; i < totalPerHour.length; i++){
+      var thElement = document.createElement('td');
+      thElement.textContent = (totalPerHour[i]);
+      trFoot.append(thElement);
+    }
+    var tdTotalFoot = document.createElement('td');
+    tdTotalFoot.textContent = (storeTotal);
+    trFoot.append(tdTotalFoot);
+    var salesTable = document.getElementById('cookie-foot');
+    salesTable.append(trFoot);
+}
+
 renderHeader();
 
  var firstAndPikeStore = new Store('1st and Pike', 23, 65, 6.3);
@@ -74,19 +118,41 @@ seattleCenterStore.render();
 capitolHillStore.render();
 alkiStore.render();
 
+footerCalculator();
+renderFooter();
+
+
+
+function addNewStore(event) {
+    event.preventDefault();
+    var newStoreName = event.target.storename.value;
+    var newMaximunCustomers = event.target.maxcustomers.value;
+    var newMinimumCustomers = event.target.minicustomers.value;
+    var newAvgCookies = event.target.avgcookies.value;
+
+    var newStore = new Store( newStoreName, newMaximunCustomers, newMinimumCustomers, newAvgCookies);
+
+    salesTable = document.getElementById('cookie-foot');
+    salesTable.textContent = '';
+
+    newStore.cookiesSold();
+    allStores.push(newStore);
+    footerCalculator();
+    renderFooter();
+}
+//      var storeFormReference = document.getElementById('new-store');
+//     storeFormReference.addEventListener('submit', addNewStore());
+   
 
 
 
 
-
-
-
-for(var c = 0; c < oppHours.length; c++) {
-    var hourSum = 0;
-    for(var i = 0; i < allStore.length; i++) {
-        hourSum += allStore[i].oppHours[c];
-    }
-};
+// for(var c = 0; c < oppHours.length; c++) {
+//     var hourSum = 0;
+//     for(var i = 0; i < allStore.length; i++) {
+//         hourSum += allStore[i].oppHours[c];
+//     }
+// };
 
 
 
