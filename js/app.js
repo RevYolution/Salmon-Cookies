@@ -82,20 +82,21 @@ function footerCalculator(){
 }
 
 function renderFooter() {
-    var trFoot = document.createElement('tr');
+    var tFoot = document.createElement('tFoot');
+    var trElement = document.createElement('tr');
     var tdElement = document.createElement('td');
     tdElement.textContent = 'Hourly totals';
-    trFoot.append(tdElement);
+    trElement.append(tdElement);
     for(var i = 0; i < totalPerHour.length; i++){
-      var thElement = document.createElement('td');
-      thElement.textContent = (totalPerHour[i]);
-      trFoot.append(thElement);
+      tdElement = document.createElement('td');
+      tdElement.textContent = totalPerHour[i];
+      trElement.append(tdElement);
     }
-    var tdTotalFoot = document.createElement('td');
-    tdTotalFoot.textContent = (storeTotal);
-    trFoot.append(tdTotalFoot);
-    var salesTable = document.getElementById('cookie-foot');
-    salesTable.append(trFoot);
+    tdElement = document.createElement('td');
+    tdElement.textContent = storeTotal;
+    trElement.append(tdElement);
+    tFoot.append(trElement);
+    salesTable.append(tFoot);
 }
 
 renderHeader();
@@ -127,32 +128,25 @@ function addNewStore(event) {
     event.preventDefault();
     var newStoreName = event.target.storename.value;
     var newMaximunCustomers = event.target.maxcustomers.value;
-    var newMinimumCustomers = event.target.minicustomers.value;
+    var newMinimumCustomers = event.target.mincustomers.value;
     var newAvgCookies = event.target.avgcookies.value;
 
-    var newStore = new Store( newStoreName, newMaximunCustomers, newMinimumCustomers, newAvgCookies);
-
-    salesTable = document.getElementById('cookie-foot');
-    salesTable.textContent = '';
+    var newStore = new Store( newStoreName, newMinimumCustomers, newMaximunCustomers,  newAvgCookies);
 
     newStore.cookiesSold();
-    allStores.push(newStore);
+    newStore.render();
+
+    var salesFooter = document.getElementById('cookie-foot');
+    salesFooter.textContent = '';
+
+    // allStores.push(newStore);
+    storeTotal = 0;
     footerCalculator();
     renderFooter();
 }
-//      var storeFormReference = document.getElementById('new-store');
-//     storeFormReference.addEventListener('submit', addNewStore());
-   
 
-
-
-
-// for(var c = 0; c < oppHours.length; c++) {
-//     var hourSum = 0;
-//     for(var i = 0; i < allStore.length; i++) {
-//         hourSum += allStore[i].oppHours[c];
-//     }
-// };
+var storeFormRef = document.getElementById('cookieform');
+storeFormRef.addEventListener('submit', addNewStore);
 
 
 
