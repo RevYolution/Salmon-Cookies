@@ -28,7 +28,7 @@ function Store(name, minimumCustomers, maximumCustomers, cookiesPerCustomer) {
         };
     };
     this.dailyTotals = function() {
-        for(var i = 0; i < cookiesSoldPerHour.length; i++) {
+        for(var i = 0; i < oppHours.length; i++) {
             this.totalDayCookies += this.cookiesSoldPerHour[i];
         }
     };
@@ -64,7 +64,7 @@ function renderHeader() {
         th.textContent = oppHours[i];
         tr.append(th);
     }
-    th = document.createElement('th');
+    var th = document.createElement('th');
     th.textContent = 'Totals';
     tr.append(th);
     salesTable.append(tr);
@@ -87,12 +87,13 @@ function renderFooter() {
     var tdElement = document.createElement('td');
     tdElement.textContent = 'Hourly totals';
     trElement.append(tdElement);
-    for(var i = 0; i < totalPerHour.length; i++){
+    for(var i = 0; i < totalPerHour.length; i++)
+    {
       tdElement = document.createElement('td');
       tdElement.textContent = totalPerHour[i];
       trElement.append(tdElement);
     }
-    tdElement = document.createElement('td');
+    var tdElement = document.createElement('td');
     tdElement.textContent = storeTotal;
     trElement.append(tdElement);
     tFoot.append(trElement);
@@ -107,17 +108,24 @@ renderHeader();
  var capitolHillStore = new Store('Capitol Hill', 20, 38, 2.3);
  var alkiStore = new Store('Alki', 2, 16, 4.6);
 
-firstAndPikeStore.cookiesSold();
-seatacStore.cookiesSold();
-seattleCenterStore.cookiesSold();
-capitolHillStore.cookiesSold();
-alkiStore.cookiesSold();
+ firstAndPikeStore.dailyStats();
+ seatacStore.dailyStats();
+ seattleCenterStore.dailyStats();
+ capitolHillStore.dailyStats();
+ alkiStore.dailyStats();
 
-firstAndPikeStore.render();
-seatacStore.render();
-seattleCenterStore.render();
-capitolHillStore.render();
-alkiStore.render();
+
+// firstAndPikeStore.cookiesSold();
+// seatacStore.cookiesSold();
+// seattleCenterStore.cookiesSold();
+// capitolHillStore.cookiesSold();
+// alkiStore.cookiesSold();
+
+// firstAndPikeStore.render();
+// seatacStore.render();
+// seattleCenterStore.render();
+// capitolHillStore.render();
+// alkiStore.render();
 
 footerCalculator();
 renderFooter();
@@ -131,15 +139,17 @@ function addNewStore(event) {
     var newMinimumCustomers = event.target.mincustomers.value;
     var newAvgCookies = event.target.avgcookies.value;
 
-    var newStore = new Store( newStoreName, newMinimumCustomers, newMaximunCustomers,  newAvgCookies);
+    var newStore = new Store(newStoreName, Number(newMinimumCustomers), Number(newMaximunCustomers),  Number(newAvgCookies));
 
-    newStore.cookiesSold();
-    newStore.render();
+    newStore.dailyStats();
+    // newStore.cookiesSold();
+    // newStore.render();
 
-    var salesFooter = document.getElementById('cookie-foot');
-    salesFooter.textContent = '';
+    document.getElementById('cookiefoot').innerHTML = '';
 
-    // allStores.push(newStore);
+    // var salesFooter = document.getElementById('cookiefoot');
+    // salesFooter.innerHTML = '';
+
     storeTotal = 0;
     footerCalculator();
     renderFooter();
@@ -155,24 +165,6 @@ storeFormRef.addEventListener('submit', addNewStore);
 
 
 
-/**
- * Connect to the DOM to get info of store
- * Connect to form to get code when user clicks button
- * Will need to push all information into arrays
- * create id's for each input like storeName
- * 
- * function addNewStore(event) {
- * event.preventDefault();
- * 
- * var newStoreName = event.target.storeName.value;
- *          add all other var that are input to form
- * var newStore = new Store(newStorename, other var inputs)
- * newStore.render();
- * allStores.push(newStore);
- * }
- * var = storeFormReference = document.getElementById('new-store');
- * storeFormReference.addEventListener('submit', addNewStore());
- */
 // var firstAndPikeStore = {
 //     id: 'firstAndPikeLoc',
 //     minCustomers: 23,
