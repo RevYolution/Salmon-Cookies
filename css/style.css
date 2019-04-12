@@ -6,6 +6,7 @@ div {
     border: 1px solid black;
     border-radius: 50px 50px;
     margin-top: 10px;
+    float: left;
 }
 p {
     padding: 10px;
@@ -15,13 +16,21 @@ p {
 
 p.proccess {
     background-color: burlywood;
+    border-radius: 50px 50px;
 }
-div.preccess {
-    margin-top: 20px;
+div.proccess {
+    /* margin-top: 20px; */
+    float: left;    
+    margin: 60px 20px auto 20px;
+}
+div.cookies {
+margin: 60px 20px auto 20px;
 }
 
 nav {
     margin-bottom: 10px;
+    position: fixed;
+    background-color: gray;
 }
 
 h1 {
@@ -36,17 +45,23 @@ h1 {
 }
 body {
     background-color: hsla(240, 25%, 42%, 0.5);
-    position: inline-block;
+    /* position: inline-block; */
     margin-top: 10px;
 }
 h2 {
     font-family: 'Dokdo', cursive;
     font-size: 25px;
     font-weight: bold;
-    /* margin: 30px; */
+    float: left;
+    margin: 30px;
 }
 table{
     border-style: outset;
+    width: 50%;
+    height: 50%;
+    position: block;
+
+
 }
 th {
     font-weight: bold;
@@ -60,7 +75,14 @@ tr{
 }
 td{
     border: 2px solid black;
-    padding: 5px;
+    padding: 5px auto 5px auto;
+}
+td.price:hover {
+    background-color: blue;
+    color: white;
+}
+tr.odd {
+    background-color: gray;
 }
 #primary_nav_wrap
 {
