@@ -1,12 +1,27 @@
-.process {
-    height: 900px;
-    width: 350px;
-    margin: 20px
-    
+div {
+    background-color: purple;
+    height: 30%;
+    width: 25%;
+    position: inline-block;
+    border: 1px solid black;
+    border-radius: 50px 50px;
+    margin-top: 10px;
 }
-img #frosted {
-    position: relative;
-    float: right;
+p {
+    padding: 10px;
+    font-family: 'Dokdo', cursive;
+
+}
+
+p.proccess {
+    background-color: burlywood;
+}
+div.preccess {
+    margin-top: 20px;
+}
+
+nav {
+    margin-bottom: 10px;
 }
 
 h1 {
@@ -21,19 +36,17 @@ h1 {
 }
 body {
     background-color: hsla(240, 25%, 42%, 0.5);
+    position: inline-block;
+    margin-top: 10px;
 }
 h2 {
     font-family: 'Dokdo', cursive;
     font-size: 25px;
     font-weight: bold;
-    margin: 30px;
+    /* margin: 30px; */
 }
-/* ul {
-    font-family: 'Indie Flower', cursive;
-    margin: 2px;
-}
-li {
-    margin: 2px;
+table{
+    border-style: outset;
 }
 th {
     font-weight: bold;
@@ -43,11 +56,12 @@ th {
 tr{
     border: 2px solid black;
     padding: 5px;
+    border-style: outset;
 }
 td{
     border: 2px solid black;
     padding: 5px;
-} */
+}
 #primary_nav_wrap
 {
 	margin-top:15px
