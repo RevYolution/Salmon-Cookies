@@ -2,7 +2,6 @@
 
 var salesTable = document.getElementById('cookie-table');
 var allStores=[];
-// locations = ['1st and Pike','SeaTac Airport','Seattle Center','Capitol Hill','Alki'];
 var oppHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 var storeTotal = 0;
 var totalPerHour = [];
@@ -100,33 +99,19 @@ function renderFooter() {
     salesTable.append(tFoot);
 }
 
-renderHeader();
 
  var firstAndPikeStore = new Store('1st and Pike', 23, 65, 6.3);
  var seatacStore = new Store('SeaTac Airport', 3, 24, 1.2);
  var seattleCenterStore = new Store('Seattle Center', 11, 38, 3.7);
  var capitolHillStore = new Store('Capitol Hill', 20, 38, 2.3);
  var alkiStore = new Store('Alki', 2, 16, 4.6);
-
+ 
+ renderHeader();
  firstAndPikeStore.dailyStats();
  seatacStore.dailyStats();
  seattleCenterStore.dailyStats();
  capitolHillStore.dailyStats();
  alkiStore.dailyStats();
-
-
-// firstAndPikeStore.cookiesSold();
-// seatacStore.cookiesSold();
-// seattleCenterStore.cookiesSold();
-// capitolHillStore.cookiesSold();
-// alkiStore.cookiesSold();
-
-// firstAndPikeStore.render();
-// seatacStore.render();
-// seattleCenterStore.render();
-// capitolHillStore.render();
-// alkiStore.render();
-
 footerCalculator();
 renderFooter();
 
@@ -142,13 +127,10 @@ function addNewStore(event) {
     var newStore = new Store(newStoreName, Number(newMinimumCustomers), Number(newMaximunCustomers),  Number(newAvgCookies));
 
     newStore.dailyStats();
-    // newStore.cookiesSold();
-    // newStore.render();
 
-    document.getElementById('cookiefoot').innerHTML = '';
 
     // var salesFooter = document.getElementById('cookiefoot');
-    // salesFooter.innerHTML = '';
+    // salesFooter.textContent = '';
 
     storeTotal = 0;
     footerCalculator();
