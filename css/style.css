@@ -1,9 +1,9 @@
 div {
-    background-color: purple;
+    /* background-color: purple; */
     height: 30%;
     width: 25%;
     position: inline-block;
-    border: 1px solid black;
+    border: 1px solid  hsla(240, 26%, 91%, 0.5);
     border-radius: 50px 50px;
     margin-top: 10px;
     float: left;
@@ -15,7 +15,7 @@ p {
 }
 
 p.proccess {
-    background-color: burlywood;
+    /* background-color: burlywood; */
     border-radius: 50px 50px;
 }
 div.proccess {
@@ -36,17 +36,21 @@ nav {
 h1 {
     font-family: 'Pacifico', cursive;
     font-size: 50px;
-    color: hsla(240, 3%, 7%, 0.5);
-    width: 800px;
-    position: relative;
-    top: 25%;
-    left: 25%;
+    color: hsla(240, 26%, 91%, 0.5);
+    /* width: 800px; */
+    /* position: relative; */
+    /* top: 25%;
+    left: 25%; */
     z-index: 10;
 }
 body {
-    background-color: hsla(240, 25%, 42%, 0.5);
+    background-image: url("../img/background-home3.jpeg");
+    background-size: 200%;
+    background-repeat: no-repeat;
     /* position: inline-block; */
     margin-top: 10px;
+    color: hsla(240, 26%, 91%, 0.5);
+
 }
 h2 {
     font-family: 'Dokdo', cursive;
