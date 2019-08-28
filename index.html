@@ -7,36 +7,11 @@
         <title>Salmon Cookies</title>
     </head>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <h1>Sattle's Favorite Cookie: Salmon Cookies</h1>
-            <li><a class="navbar-brand" href="#">Home</a></li>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                        </div>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-     <nav id="primary_nav_wrap">
-
+     <nav id="navbar">
+            <h1>Sattle's Favorite Cookie: Salmon Cookies</h1>
             <ul>
-              <li class="current-menu-item"><a href="#">Home</a></li>
-              <li><a href="#">Locations</a>
+              <li ><a id="home_link" href="#">Home</a></li>
+              <li id="locations_link"><a href="#">Locations</a>
                 <ul>
                   <li><a href="#">1st and Pike</a></li>
                   <li><a href="#">SeaTac Airport</a></li>
@@ -45,19 +20,19 @@
                   <li><a href="#">Alki</a></li>
                 </ul>
               </li>
-              <li><a href="#">Hours</a>
+              <li id="hours_link" ><a href="#">Hours</a>
                 <ul>
                   <li><a href="#">6am-8pm</a></li>
                 </ul>
               </li>
-              <li><a href="pages/about.html">About Us</a>
+              <li id="about_link" ><a href="pages/about.html">About Us</a>
               </li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="sales.html">Admin Stores</a></li>
+              <li id="contact_link" ><a href="#">Contact Us</a></li>
+              <li id="admin_link" ><a href="sales.html">Admin Stores</a></li>
             </ul>
         </nav>
     </header>
-    <body>
+    <!-- <body>
         <a href="/pages/home.ejs">Home Page</a>
         <a href="/pages/locations.ejs">Locations</a>
         <a href="/pages/about.ejs">About</a>
@@ -108,6 +83,6 @@
                     From our family to yours thank you for your support and we hope to you see soon.
                 </figcaption>
             </figure>
-    </body>
+    </body> -->
 
 </html>
