@@ -1,0 +1,28 @@
+{
+  "name": "salmon-cookies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RevYolution/Salmon-Cookies"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {},
+  "homepage": "https://github.com/RevYolution/Salmon-Cookies/blob/master/README.md",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "live-server": "^1.2.1",
+    "nodemon": "^1.19.1"
+  }
+}
