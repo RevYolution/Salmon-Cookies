@@ -22,7 +22,9 @@
     "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
     "express": "^4.17.1",
+    "jquery": "^3.4.1",
     "live-server": "^1.2.1",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "popper.js": "^1.15.0"
   }
 }
