@@ -9,70 +9,44 @@
         <title>Salmon Cookies</title>
     </head>
     <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                  
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                          </div>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                      </ul>
-                      <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                      </form>
-                    </div>
-                  </nav>
-     <nav id="navbar">
-            <h1>Sattle's Favorite Cookie: Salmon Cookies</h1>
+        <nav class="navbar">
+            <h2>Seattle's Favorite Cookie: Salmon Cookies</h2>
             <ul>
-              <li ><a id="home_link" href="#">Home</a></li>
-              <li id="locations_link"><a href="#">Locations</a>
-                <ul>
-                  <li><a href="#">1st and Pike</a></li>
-                  <li><a href="#">SeaTac Airport</a></li>
-                  <li><a href="#">Seattle Center</a></li>
-                  <li><a href="#">Capitol Hill</a></li>
-                  <li><a href="#">Alki</a></li>
-                </ul>
-              </li>
-              <li id="hours_link" ><a href="#">Hours</a>
-                <ul>
-                  <li><a href="#">6am-8pm</a></li>
-                </ul>
-              </li>
-              <li id="about_link" ><a href="pages/about.html">About Us</a>
-              </li>
-              <li id="contact_link" ><a href="#">Contact Us</a></li>
-              <li id="admin_link" ><a href="sales.html">Admin Stores</a></li>
+                <li>
+                    <a href="/index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/pages/locations.html" id="locations_dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Locations</a>
+                    <div class="dropdown-menu" aria-labelledby="locations_dropdown">
+                        <a class="dropdown-item" href="#">1st and Pike</a>
+                        <a class="dropdown-item" href="#">SeaTac Airport</a>
+                        <a class="dropdown-item" href="#">Seattle Center</a>
+                        <a class="dropdown-item" href="#">Capitol Hill</a>
+                        <a class="dropdown-item" href="#">Alki</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="/pages/hours.html">Hours</a>
+                    <ul>
+                        <li>
+                            6am-8pm
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/pages/about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="/pages/contact.html">Contact Us</a>
+                </li>
+                <li>
+                    <a href="/sales.html">Admin Stores</a>
+                </li>
             </ul>
-        </nav>
+        </nav>          
     </header>
-    <!-- <body>
-        <a href="/pages/home.ejs">Home Page</a>
-        <a href="/pages/locations.ejs">Locations</a>
-        <a href="/pages/about.ejs">About</a>
+    <body>
+        <div class="container"></div>
             <div class="proccess">
                     <h2>Proccess</h2>
                 <p class="proccess">
@@ -120,7 +94,9 @@
                     From our family to yours thank you for your support and we hope to you see soon.
                 </figcaption>
             </figure>
-    </body> -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <script src="~/js/app.js"></script>        
+    </body> 
 </html>
