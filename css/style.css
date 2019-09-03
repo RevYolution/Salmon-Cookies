@@ -17,4 +17,39 @@ body {
   background-repeat: no-repeat;
 }
 
+.container .card-process {
+  background-color: rgba(176, 176, 176, 0.5);
+  border: solid black;
+  border-radius: 2em;
+}
+.container .card-process .card-img-top {
+  width: 50%;
+}
+.container .card-process .card-img-bottom {
+  width: 50%;
+  margin-left: 50%;
+}
+.container .card-cookies {
+  width: 50%;
+  background-color: rgba(176, 176, 176, 0.5);
+  border: solid black;
+  border-radius: 2em;
+}
+.container .card-cookies .card-img-bottom {
+  width: 40%;
+}
+
+.table {
+  width: 50%;
+}
+
+tr {
+  border: solid black;
+  border-radius: 1em;
+}
+
+td {
+  border: solid black;
+}
+
 /*# sourceMappingURL=style.css.map */

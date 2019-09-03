@@ -15,6 +15,42 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
 }
+.container {
+    .card-process {
+        background-color:hsla(108, 0%, 69%, 0.5);
+        border: solid black;
+        border-radius: 2em;
+        .card-img-top {
+            width: 50%;
+        }
+        h4 {
+            
+        }
+        .card-img-bottom {
+            width: 50%;
+            margin-left: 50%;
+        }
+    }
+    .card-cookies {
+        width: 50%;
+        background-color: hsla(108, 0%, 69%, 0.5);
+        border: solid black;
+        border-radius: 2em;
+        .card-img-bottom {
+            width: 40%;
+        }
+    }
+}
+.table {
+    width: 50%;
+}
+tr {
+    border: solid black;
+    border-radius: 1em;
+}
+td {
+    border: solid black;
+}
 
 
 
