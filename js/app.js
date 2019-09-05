@@ -140,7 +140,11 @@ function addNewStore(event) {
 var storeFormRef = document.getElementById('cookieform');
 storeFormRef.addEventListener('submit', addNewStore);
 
+document.querySelector("nav-link dropdown-toggle").addEventListener("click", function(e){
+    document.querySelector("dropdown-menu").classList.toggle("show");
+});
 
+console.log("Dropdown clicked");
 
 
 
