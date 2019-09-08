@@ -69,6 +69,9 @@ ul li ul li {
 .container .card-cookies .card-img-bottom {
   width: 40%;
 }
+.container .card-shop {
+  width: 50%;
+}
 
 .table {
   width: 50%;

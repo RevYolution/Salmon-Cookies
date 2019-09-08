@@ -15,7 +15,7 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
 }
-
+//Styling for drop down menus. Allows for ul under a li to be hidden until hover the parent li is being hovered over.  
 li {
     display: block;
     transition-duration: .5s;
@@ -63,6 +63,9 @@ ul li ul li {
         .card-img-bottom {
             width: 40%;
         }
+    }
+    .card-shop {
+        width: 50%;
     }
 }
 .table {
